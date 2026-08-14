@@ -229,7 +229,7 @@ export default function CategoryPreview() {
   return (
     <section
       id="categories"
-      className="py-20 px-6 md:px-12 bg-[#FCF9F3] border-t border-[#ebdcb9]/40"
+      className="scroll-mt-32 md:scroll-mt-36 py-20 px-6 md:px-12 bg-[#FCF9F3] border-t border-[#ebdcb9]/40"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}

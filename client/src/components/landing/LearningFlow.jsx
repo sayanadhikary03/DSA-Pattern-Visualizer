@@ -54,7 +54,7 @@ export default function LearningFlow() {
   return (
     <section
       id="learning-flow"
-      className="py-20 px-6 md:px-12 bg-[#FCF9F3] border-t border-[#ebdcb9]/40 relative"
+      className="scroll-mt-32 md:scroll-mt-36 py-20 px-6 md:px-12 bg-[#FCF9F3] border-t border-[#ebdcb9]/40 relative"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}

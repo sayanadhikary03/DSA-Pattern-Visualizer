@@ -17,7 +17,7 @@ export default function Home({ theme, onToggleTheme }) {
 
   return (
     <div
-      className={`relative min-h-screen w-full overflow-hidden ${
+      className={`relative min-h-screen w-full overflow-x-hidden ${
         isDark ? "theme-dark bg-[#0d0a2c]" : "theme-light bg-[#3d2df5]"
       }`}
     >
@@ -36,7 +36,7 @@ export default function Home({ theme, onToggleTheme }) {
 
       {/* The framed cream "poster" that holds the whole landing */}
       <div className="relative z-10 mx-auto max-w-[1480px] px-4 sm:px-8 lg:px-14 py-6 sm:py-10 lg:py-14">
-        <div className="poster-shell relative rounded-[28px] sm:rounded-[40px] lg:rounded-[52px] bg-[#FCF9F3] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.45)] overflow-hidden border border-black/5">
+        <div className="poster-shell relative rounded-[28px] sm:rounded-[40px] lg:rounded-[52px] bg-[#FCF9F3] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.45)] overflow-visible border border-black/5">
           <Navbar theme={theme} onToggleTheme={onToggleTheme} />
           <Hero />
           <CategoryPreview />
