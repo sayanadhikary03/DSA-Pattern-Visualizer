@@ -31,7 +31,6 @@ export default function Hero() {
   return (
     <section className="relative w-full py-10 lg:py-14 px-6 md:px-12 bg-[#FCF9F3] overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 items-center gap-10 lg:gap-4">
-
         {/* =========================
             LEFT SIDE - HERO CONTENT
         ========================== */}
@@ -94,9 +93,7 @@ export default function Hero() {
             {/* =========================
                 DSA
             ========================== */}
-            <span className="block">
-              DSA
-            </span>
+            <span className="block">DSA</span>
 
             {/* =========================
                 PATTERN BADGE
@@ -154,10 +151,8 @@ export default function Hero() {
                 "
               >
                 PATTERN
-
                 {/* Ticket cutouts */}
                 <div className="absolute left-[-8px] top-1/2 -translate-y-1/2 w-4 h-6 bg-[#FCF9F3] border-r-3 border-zinc-950 rounded-r-full" />
-
                 <div className="absolute right-[-8px] top-1/2 -translate-y-1/2 w-4 h-6 bg-[#FCF9F3] border-l-3 border-zinc-950 rounded-l-full" />
               </motion.div>
             </div>
@@ -169,6 +164,12 @@ export default function Hero() {
               className="
                 block
                 text-zinc-950
+                text-[2.78rem]
+                xs:text-[3.22rem]
+                sm:text-[3.79rem]
+                md:text-[4.37rem]
+                lg:text-[4.25rem]
+                xl:text-[4.6rem]
                 whitespace-nowrap
                 tracking-[-0.055em]
               "
@@ -241,7 +242,6 @@ export default function Hero() {
               "
             >
               Explore Patterns
-
               <ArrowRight
                 size={16}
                 className="transition-transform duration-300 group-hover:translate-x-1"
