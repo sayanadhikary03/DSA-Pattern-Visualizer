@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Code } from "lucide-react";
+import { ArrowRight, Code, Moon, Sun } from "lucide-react";
 
-export default function Navbar() {
+export default function Navbar({ theme, onToggleTheme }) {
+  const isDark = theme === "dark";
+
   return (
     <nav className="w-full flex items-center justify-between py-6 px-6 md:px-12 border-b border-[#ebdcb9]/40 bg-[#FCF9F3]">
       {/* Brand logo */}
@@ -42,8 +44,28 @@ export default function Navbar() {
         </a>
       </div>
 
-      {/* Action CTA */}
-      <div>
+      {/* Action CTA + Theme Toggle */}
+      <div className="flex items-center gap-3">
+        <button
+          type="button"
+          onClick={onToggleTheme}
+          className="theme-toggle w-11 h-11 rounded-full transition-all duration-300 flex items-center justify-center"
+          aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+          title={`Switch to ${isDark ? "light" : "dark"} mode`}
+        >
+          {isDark ? (
+            <Sun
+              size={17}
+              className="text-amber-300 transition-transform duration-300 group-hover:rotate-12"
+            />
+          ) : (
+            <Moon
+              size={17}
+              className="text-indigo-700 transition-transform duration-300 group-hover:-rotate-12"
+            />
+          )}
+        </button>
+
         <Link
           to="/patterns"
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900 hover:bg-zinc-800 text-white font-space font-bold text-xs tracking-widest uppercase transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group"
