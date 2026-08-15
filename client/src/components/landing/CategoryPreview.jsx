@@ -225,6 +225,14 @@ const categories = [
   },
 ];
 
+function toCategoryQuery(name) {
+  return name
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 export default function CategoryPreview() {
   return (
     <section
@@ -265,7 +273,7 @@ export default function CategoryPreview() {
                 className={`${cat.span}`}
               >
                 <Link
-                  to="/patterns"
+                  to={`/patterns?category=${toCategoryQuery(cat.name)}`}
                   className={`category-card dark-tone-${idx + 1} group h-full p-6 md:p-8 rounded-3xl border-3 border-zinc-900 shadow-[6px_6px_0px_rgba(18,18,20,1)] hover:shadow-[10px_10px_0px_rgba(18,18,20,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between ${cat.color}`}
                 >
                   <div>

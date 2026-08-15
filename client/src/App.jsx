@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Patterns from "./pages/Patterns";
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -29,11 +30,9 @@ function App() {
           path="/"
           element={<Home theme={theme} onToggleTheme={toggleTheme} />}
         />
-        {/* Patterns page is intentionally deferred — the CTA links here
-            so routing is ready when the visualizer itself is built. */}
         <Route
           path="/patterns"
-          element={<Home theme={theme} onToggleTheme={toggleTheme} />}
+          element={<Patterns theme={theme} onToggleTheme={toggleTheme} />}
         />
       </Routes>
     </BrowserRouter>
