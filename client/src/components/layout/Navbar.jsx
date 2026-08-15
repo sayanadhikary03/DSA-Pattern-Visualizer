@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Code, Moon, Sun, Menu, X } from "lucide-react";
+import { ArrowRight, Moon, Sun, Menu, X } from "lucide-react";
+import brandIcon from "../../assets/websute icon.jpeg";
 
 export default function Navbar({ theme, onToggleTheme }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -114,16 +115,14 @@ export default function Navbar({ theme, onToggleTheme }) {
                 w-9
                 h-9
                 shrink-0
+                overflow-hidden
 
                 rounded-lg
 
+                border
+                border-zinc-200
+
                 bg-zinc-900
-
-                flex
-                items-center
-                justify-center
-
-                text-white
 
                 transition-all
                 duration-300
@@ -131,7 +130,12 @@ export default function Navbar({ theme, onToggleTheme }) {
                 group-hover:rotate-6
               "
             >
-              <Code size={18} />
+              <img
+                src={brandIcon}
+                alt="AlgoTrace icon"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
 
             {/* Logo Text */}
@@ -142,38 +146,38 @@ export default function Navbar({ theme, onToggleTheme }) {
                   font-display
                   font-extrabold
 
-                  text-sm
+                  text-base
 
-                  tracking-wider
-                  uppercase
+                  tracking-normal
 
                   text-zinc-900
 
                   leading-none
                 "
               >
-                DSA PATTERN
+                <span className="text-zinc-900">Algo</span>
+                <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-500 bg-clip-text text-transparent">
+                  Trace
+                </span>
               </span>
 
               <span
                 className="
                   font-space
-                  font-medium
+                  font-semibold
 
-                  text-[9px]
+                  text-[10px]
 
-                  tracking-[0.23em]
+                  tracking-[0.08em]
 
                   text-zinc-500
-
-                  uppercase
 
                   mt-0.5
 
                   leading-none
                 "
               >
-                VISUALIZER
+                DSA Pattern Visualizer
               </span>
             </div>
           </Link>
@@ -523,16 +527,14 @@ export default function Navbar({ theme, onToggleTheme }) {
             className="
               w-9
               h-9
+              overflow-hidden
 
               rounded-lg
 
+              border
+              border-zinc-200
+
               bg-zinc-900
-
-              flex
-              items-center
-              justify-center
-
-              text-white
 
               transition-transform
               duration-300
@@ -540,7 +542,12 @@ export default function Navbar({ theme, onToggleTheme }) {
               group-hover:rotate-12
             "
           >
-            <Code size={18} />
+            <img
+              src={brandIcon}
+              alt="AlgoTrace icon"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
 
           <div className="flex flex-col">
@@ -549,35 +556,35 @@ export default function Navbar({ theme, onToggleTheme }) {
                 font-display
                 font-extrabold
 
-                text-sm
-                md:text-base
+                text-base
+                md:text-lg
 
-                tracking-wider
-                uppercase
+                tracking-normal
 
                 text-zinc-900
               "
             >
-              DSA PATTERN
+              <span className="text-zinc-900">Algo</span>
+              <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-500 bg-clip-text text-transparent">
+                Trace
+              </span>
             </span>
 
             <span
               className="
                 font-space
-                font-medium
+                font-semibold
 
-                text-[10px]
+                text-[11px]
 
-                tracking-[0.25em]
+                tracking-[0.08em]
 
                 text-zinc-500
-
-                uppercase
 
                 -mt-1
               "
             >
-              VISUALIZER
+              DSA Pattern Visualizer
             </span>
           </div>
         </Link>

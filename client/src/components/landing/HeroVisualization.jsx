@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Play,
@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 
 export default function HeroVisualization() {
+  const containerRef = useRef(null);
+
   // =========================================================
   // ARRAY / BUBBLE SORT STATE
   // =========================================================
@@ -22,6 +24,7 @@ export default function HeroVisualization() {
   const [stepText, setStepText] = useState("Compare 5 and 3. No swap needed.");
 
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isInView, setIsInView] = useState(true);
 
   // =========================================================
   // BINARY TREE STATE
@@ -55,11 +58,38 @@ export default function HeroVisualization() {
   const traversalOrder = ["A", "B", "D", "B", "E", "B", "A", "C", "A"];
 
   // =========================================================
+  // VISIBILITY STATE
+  // =========================================================
+
+  useEffect(() => {
+    const element = containerRef.current;
+
+    if (!element || typeof IntersectionObserver === "undefined") {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      {
+        threshold: 0.15,
+      },
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // =========================================================
   // BUBBLE SORT ANIMATION
   // =========================================================
 
   useEffect(() => {
-    if (!isPlaying) return;
+    if (!isPlaying || !isInView) return;
 
     const timer = setInterval(() => {
       setArray((currentArray) => {
@@ -97,13 +127,15 @@ export default function HeroVisualization() {
     }, 2200);
 
     return () => clearInterval(timer);
-  }, [isPlaying, jIndex]);
+  }, [isInView, isPlaying, jIndex]);
 
   // =========================================================
   // TREE ANIMATION
   // =========================================================
 
   useEffect(() => {
+    if (!isInView) return;
+
     let index = 0;
 
     const timer = setInterval(() => {
@@ -113,7 +145,7 @@ export default function HeroVisualization() {
     }, 1500);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [isInView]);
 
   // =========================================================
   // RESET ARRAY
@@ -131,6 +163,7 @@ export default function HeroVisualization() {
   // =========================================================
 
   const dragSettings = {
+    drag: true,
     dragMomentum: false,
     dragElastic: 0.12,
     dragConstraints: {
@@ -147,6 +180,7 @@ export default function HeroVisualization() {
 
   return (
     <div
+      ref={containerRef}
       className="
         relative
         w-full

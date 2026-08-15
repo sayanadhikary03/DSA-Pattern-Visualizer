@@ -60,8 +60,8 @@ export default function Hero() {
               <Terminal size={10} />
             </div>
 
-            <span className="font-space font-bold text-[10px] md:text-xs tracking-[0.2em] text-zinc-500 uppercase">
-              EDUCATIONAL ALGORITHM PLAYGROUND
+            <span className="font-space font-bold text-[10px] md:text-xs tracking-[0.08em] text-zinc-500">
+              See the code. Trace the Logic.
             </span>
           </motion.div>
 

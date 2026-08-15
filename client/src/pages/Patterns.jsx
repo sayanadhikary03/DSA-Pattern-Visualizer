@@ -948,7 +948,12 @@ export default function Patterns() {
             </button>
           </div>
 
-          <div className="h-[calc(100%-34px)] overflow-auto rounded-xl border border-zinc-800">
+          <div
+            onWheel={(event) => {
+              event.stopPropagation();
+            }}
+            className="h-[calc(100%-34px)] overflow-auto overscroll-contain rounded-xl border border-zinc-800"
+          >
             {codeLines.map((line, index) => {
               const lineNumber = index + 1;
               const active = lineNumber === activeLine;

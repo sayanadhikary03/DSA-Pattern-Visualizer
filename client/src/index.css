@@ -55,6 +55,10 @@ body,
   min-height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Tailwind v4 doesn't ship border-3 by default — many landing components
    rely on it for the chunky editorial outline aesthetic. */
 .border-3 {
