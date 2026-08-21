@@ -17,7 +17,6 @@ const cppCode = `void selectionSort(vector<int>& arr) {
         swap(arr[i], arr[minIndex]);
     }
 }`;
-
 const pythonCode = `def selection_sort(arr):
     n = len(arr)
 
@@ -31,7 +30,6 @@ const pythonCode = `def selection_sort(arr):
                 min_index = j
 
         arr[i], arr[min_index] = arr[min_index], arr[i]`;
-
 function generateSteps(input) {
   const arr = Array.isArray(input) ? [...input] : [...(input.arr || input)];
   const steps = [];

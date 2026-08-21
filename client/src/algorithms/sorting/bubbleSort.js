@@ -2,7 +2,7 @@ import { EVENT_TYPES } from "../../engine/eventTypes";
 
 const cppCode = `void bubbleSort(vector<int>& arr) {
     int n = arr.size();
-
+    // Compare adjacent elements in each pass.
     for (int i = 0; i < n - 1; i++) {
 
         for (int j = 0; j < n - i - 1; j++) {
@@ -14,10 +14,9 @@ const cppCode = `void bubbleSort(vector<int>& arr) {
         }
     }
 }`;
-
 const pythonCode = `def bubble_sort(arr):
     n = len(arr)
-
+    # Compare adjacent elements in each pass.
     for i in range(n - 1):
 
         for j in range(n - i - 1):
@@ -25,7 +24,6 @@ const pythonCode = `def bubble_sort(arr):
             # Compare adjacent elements
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]`;
-
 function generateSteps(input) {
   const arr = Array.isArray(input) ? [...input] : [...input.arr || input];
   const steps = [];

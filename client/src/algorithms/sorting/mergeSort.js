@@ -43,7 +43,6 @@ void mergeSort(vector<int>& arr, int left, int right) {
 
     mergeArray(arr, left, mid, right);
 }`;
-
 const pythonCode = `def merge_sort(arr):
     if len(arr) <= 1:
         return arr
@@ -70,7 +69,6 @@ const pythonCode = `def merge_sort(arr):
     result.extend(right[j:])
 
     return result`;
-
 function generateSteps(input) {
   const originalArr = Array.isArray(input) ? [...input] : [...(input.arr || input)];
   const steps = [];

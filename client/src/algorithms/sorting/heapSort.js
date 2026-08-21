@@ -32,7 +32,6 @@ void heapSort(vector<int>& arr) {
         heapify(arr, i, 0);
     }
 }`;
-
 const pythonCode = `def heapify(arr, n, i):
     largest = i
 
@@ -49,7 +48,6 @@ const pythonCode = `def heapify(arr, n, i):
         arr[i], arr[largest] = arr[largest], arr[i]
         heapify(arr, n, largest)
 
-
 def heap_sort(arr):
     n = len(arr)
 
@@ -60,7 +58,6 @@ def heap_sort(arr):
     for i in range(n - 1, 0, -1):
         arr[0], arr[i] = arr[i], arr[0]
         heapify(arr, i, 0)`;
-
 function generateSteps(input) {
   const arr = Array.isArray(input) ? [...input] : [...(input.arr || input)];
   const steps = [];

@@ -27,7 +27,6 @@ void quickSort(vector<int>& arr, int low, int high) {
     quickSort(arr, low, pivotIndex - 1);
     quickSort(arr, pivotIndex + 1, high);
 }`;
-
 const pythonCode = `def quick_sort(arr, low, high):
     if low >= high:
         return
@@ -48,7 +47,6 @@ const pythonCode = `def quick_sort(arr, low, high):
 
     quick_sort(arr, low, pivot_index - 1)
     quick_sort(arr, pivot_index + 1, high)`;
-
 function generateSteps(input) {
   const arr = Array.isArray(input) ? [...input] : [...(input.arr || input)];
   const steps = [];

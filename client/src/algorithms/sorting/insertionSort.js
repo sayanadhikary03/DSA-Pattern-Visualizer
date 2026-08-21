@@ -14,7 +14,6 @@ const cppCode = `void insertionSort(vector<int>& arr) {
         arr[j + 1] = key;
     }
 }`;
-
 const pythonCode = `def insertion_sort(arr):
     for i in range(1, len(arr)):
         key = arr[i]
@@ -26,7 +25,6 @@ const pythonCode = `def insertion_sort(arr):
             j -= 1
 
         arr[j + 1] = key`;
-
 function generateSteps(input) {
   const arr = Array.isArray(input) ? [...input] : [...(input.arr || input)];
   const steps = [];
